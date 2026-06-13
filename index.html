@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anas Mehmood | Portfolio</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0b0f19;
+            --panel-bg: rgba(17, 24, 39, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Ambient Glow Backgrounds */
+        .ambient-glow {
+            position: fixed;
+            width: 40vw;
+            height: 40vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(0,0,0,0) 70%);
+            top: -10vw;
+            right: -10vw;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .ambient-glow-2 {
+            position: fixed;
+            width: 50vw;
+            height: 50vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, rgba(0,0,0,0) 70%);
+            bottom: -15vw;
+            left: -15vw;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Common Style */
+        .glass {
+            background: var(--panel-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .menu-btn {
+            display: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Container Rules */
+        section {
+            padding: 110px 10% 60px 10%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 90px;
+        }
+
+        .hero-badge {
+            background: var(--accent-glow);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            display: inline-block;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        #hero h1 span {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-dark);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--text-secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Social Links Block */
+        .hero-socials-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-chip {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.2s ease;
+        }
+
+        .social-chip:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Section Global Typography */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 3.5rem;
+        }
+
+        /* Timeline Section Styles */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--border-color);
+            top: 0;
+            bottom: 0;
+            left: 20px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background: transparent;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            left: 15px;
+            background-color: var(--bg-dark);
+            border: 2px solid var(--accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content h4 {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Expertise Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.25);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        /* Projects Layout */
+        .project-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 8px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-info {
+            padding: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-info h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .project-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: var(--accent-glow);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .project-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 400px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-method-card {
+            padding: 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .contact-method-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon-frame {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            background: var(--accent-glow);
+            font-size: 1.1rem;
+        }
+
+        .contact-method-card div p:first-child {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-method-card div p:last-child {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        form {
+            padding: 2.5rem;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 10% 40px 10%;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Scroll Animation Utilities */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 968px) {
+            #hero h1 { font-size: 2.8rem; }
+            .contact-container { grid-template-columns: 1fr; gap: 3rem; }
+            nav { padding: 0 5%; }
+            section { padding: 90px 5% 40px 5%; }
+            footer { padding: 40px 5%; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-dark);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 3rem;
+                gap: 2rem;
+                transition: left 0.4s ease;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-links.open {
+                left: 0;
+            }
+
+            .menu-btn { display: block; }
+            #hero h1 { font-size: 2.3rem; }
+            .cta-group { flex-direction: column; width: 100%; }
+            .btn { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Accents -->
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- Navigation Header -->
+    <nav class="glass">
+        <a href="#hero" class="logo">ANAS MEHMOOD<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-item active">Home</a></li>
+            <li><a href="#education" class="nav-item">Education</a></li>
+            <li><a href="#expertise" class="nav-item">Expertise</a></li>
+            <li><a href="#projects" class="nav-item">Projects</a></li>
+            <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+        <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </nav>
+
+    <!-- Hero Area -->
+    <section id="hero">
+        <div class="hero-badge">Available for Projects</div>
+        <h1>Engineering Scalable Software & Decoding <span>Biological Data</span></h1>
+        <p>Full-Stack Developer and Bioinformatics specialist focused on clean visual architecture, efficient data pipelines, and optimized systems engineering.</p>
+        
+        <div class="cta-group">
+            <a href="#projects" class="btn btn-primary">Explore Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+
+        <!-- Direct Instant Action Hub -->
+        <div class="hero-socials-row">
+            <a href="mailto:anas03218686333@gmail.com" class="social-chip"><i class="fa-regular fa-envelope"></i> Email</a>
+            <a href="https://wa.me/923247652566" target="_blank" class="social-chip"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="www.linkedin.com/in/anas-mehmood-138080379" target="_blank" class="social-chip"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://github.com/anasmehmood782" target="_blank" class="social-chip"><i class="fa-brands fa-github"></i> GitHub</a>
+            <!-- <a href="https://facebook.com/yourusername" target="_blank" class="social-chip"><i class="fa-brands fa-facebook-f"></i> Facebook</a> -->
+        </div>
+    </section>
+
+    <!-- Education Timeline Section -->
+    <section id="education">
+        <div class="reveal">
+            <h2 class="section-title">Academic Pathway</h2>
+            <p class="section-subtitle">The background driving my technical engineering and computational research.</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-content glass">
+                    <div class="timeline-date">2024 — Present</div>
+                    <h3>BS Bioinformatics</h3>
+                    <h4>University of Agriculture, Faisalabad</h4>
+                    <p>Focusing on algorithmic sequence mapping, data architectures, statistical modeling, and transcriptomics registries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="reveal">
+            <h2 class="section-title">Core Expertise</h2>
+            <p class="section-subtitle">A balanced approach to application architecture, mathematical analysis, and data systems.</p>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-card glass reveal">
+                <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Full-Stack Development</h3>
+                <div class="skill-tags">
+                    <span class="tag">HTML5 / CSS3</span>
+                    <span class="tag">JavaScript (ES6+)</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">SQL / DBMS</span>
+                    <span class="tag">VB.NET</span>
+                </div>
+            </div>
+            <div class="skill-card glass reveal">
+                <div class="skill-icon"><i class="fa-solid fa-dna"></i></div>
+                <h3>Bioinformatics & ML</h3>
+                <div class="skill-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">NumPy / Pandas</span>
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">Sequence Alignment</span>
+                    <span class="tag">Transcriptomics</span>
+                </div>
+            </div>
+           <!-- Card 3: Mobile & Systems Architecture -->
+            <div class="skill-card glass reveal">
+                <div class="skill-icon"><i class="fa-solid fa-cubes"></i></div>
+                <h3>Mobile & Architecture</h3>
+                <div class="skill-tags">
+                    <span class="tag">React JS</span>
+                    <span class="tag">Flutter / Dart</span>
+                    <span class="tag">Cross-Platform UI</span>
+                    <span class="tag">REST API Integration</span>
+                    <span class="tag">Object-Oriented Programming</span>
+                </div>
+            </div>
+            <div class="skill-card glass reveal">
+                <div class="skill-icon"><i class="fa-solid fa-terminal"></i></div>
+                <h3>DevOps & Cloud</h3>
+                <div class="skill-tags">
+                    <span class="tag">Git / GitHub</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">AWS Cloud</span>
+                    <span class="tag">Terraform</span>
+                    <span class="tag">Ansible</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="reveal">
+            <h2 class="section-title">Featured Work</h2>
+            <p class="section-subtitle">Selected applications displaying algorithmic logic, minimalist UI execution, and systems engineering.</p>
+        </div>
+
+        <div class="project-filters reveal">
+            <button class="filter-btn active" data-filter="all">All Solutions</button>
+            <button class="filter-btn" data-filter="web-apps">Web Systems (PHP/JS)</button>
+            <button class="filter-btn" data-filter="mobile-ai">Mobile & AI Ecosystems</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1: ClassSync -->
+            <div class="project-card glass reveal" data-category="web-apps">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">Vanilla JS</span>
+                        <span class="tech-badge">CSS Grid</span>
+                        <span class="tech-badge">UI/UX Layouts</span>
+                    </div>
+                    <h3>Library Management</h3>
+                    <p>A classical website to manage Library's book with visual dashborad having Feature of dark/light mode by using HTML CSS JavaScript</p>
+                    <div class="project-links">
+                        <a href="https://github.com/anasmehmood782/library" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+                        <a href="https://anasmehmood782.github.io/library/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Attendance System -->
+            <div class="project-card glass reveal" data-category="web-apps">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Data Structures</span>
+                        <span class="tech-badge">SaaS Minimalist</span>
+                    </div>
+                    <h3>Attendance Management Suite</h3>
+                    <p>An enterprise-grade personnel validation platform tailored around instant filtering engines and centralized operational dashboards.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/anasmehmood782/attandancesystem" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+                        <a href="https://anasmehmood782.github.io/attandancesystem/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: School Management System -->
+            <div class="project-card glass reveal" data-category="web-apps">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">PHP</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">Authentication</span>
+                    </div>
+                    <h3>School Management System</h3>
+                    <p>A comprehensive academic relational database framework built to coordinate student portfolios, grades, and records queries efficiently.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/anasmehmood782/school-system" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+                        <!-- <a href="https://yourdemo.com/school-system" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Airline System -->
+            <div class="project-card glass reveal" data-category="web-apps">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">PHP Core</span>
+                        <span class="tech-badge">Relational SQL</span>
+                        <span class="tech-badge">State Management</span>
+                    </div>
+                    <h3>Airline Booking System</h3>
+                    <p>A high-performance reservation portal organizing flight path routing logic, schedule allocations, and concurrent database operations cleanly.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/anasmehmood782/airline-system" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+                        <!-- <a href="https://yourdemo.com/airline-system" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Online Book Store -->
+            <div class="project-card glass reveal" data-category="web-apps">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">PHP</span>
+                        <span class="tech-badge">CRUD Framework</span>
+                        <span class="tech-badge">E-Commerce</span>
+                    </div>
+                    <h3>Online Book Store</h3>
+                    <p>An elegant storefront engineered with secure catalog operations, cart state processing, and responsive stock inventory views.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/anasmehmood782/bookstore" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+                        <!-- <a href="https://yourdemo.com/bookstore" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Travel App -->
+            <div class="project-card glass reveal" data-category="mobile-ai">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">React JS</span>
+                        <span class="tech-badge">REST APIs</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                    </div>
+                    <h3>Smart Travel & Forecast Guide</h3>
+                    <p>A dynamic, modern travel planning hub integrating geographical mapping data pipelines alongside real-time forecast updates.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/anasmehmood782/travel-app" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+                        <!-- <a href="https://yourdemo.com/travel-app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7: Sales Inventory -->
+            <div class="project-card glass reveal" data-category="mobile-ai">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Pandas / NumPy</span>
+                        <span class="tech-badge">Data Analysis</span>
+                    </div>
+                    <h3>Sales & Inventory Tracker</h3>
+                    <p>An analytical backend utility engineered to model transaction parameters, audit inventory states, and generate smart metrics reports.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/anasmehmood782/sales-inventory" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+                        <!-- <a href="https://yourdemo.com/sales-inventory" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: Soft Support -->
+            <div class="project-card glass reveal" data-category="mobile-ai">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">Flutter</span>
+                        <span class="tech-badge">Dart</span>
+                        <span class="tech-badge">Cross-Platform</span>
+                    </div>
+                    <h3>Soft Support Client</h3>
+                    <p>A cross-platform mobile user utility app optimized for fluid user interactions, smooth navigation states, and fast data rendering.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/anasmehmood782/soft-support" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+                        <!-- <a href="https://yourdemo.com/soft-support" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="reveal">
+            <h2 class="section-title">Initiate Alignment</h2>
+            <p class="section-subtitle">Let's discuss development opportunities, data platform architectures, or research integrations.</p>
+        </div>
+
+        <div class="contact-container reveal">
+            <div class="contact-details">
+                <h3>Connect via your preferred framework.</h3>
+                <p>Click any link below for direct routing, or deploy the communication array on the right side.</p>
+                
+                <div class="contact-grid">
+                    <!-- Adjusted for text wrapping to prevent card text clipping -->
+                    <a href="mailto:anas03218686333@gmail.com" class="contact-method-card glass" style="word-break: break-all;">
+                        <div class="contact-icon-frame"><i class="fa-regular fa-envelope"></i></div>
+                        <div>
+                            <p>Email</p>
+                            <p>contact</p>
+                        </div>
+                    </a>
+                    <!-- Typo corrected: "Open Chat Chat" -> "Open Chat" -->
+                    <a href="https://wa.me/923247652566" target="_blank" class="contact-method-card glass">
+                        <div class="contact-icon-frame"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <p>WhatsApp</p>
+                            <p>Open Chat</p>
+                        </div>
+                    </a>
+                    <a href="www.linkedin.com/in/anas-mehmood-138080379" target="_blank" class="contact-method-card glass">
+                        <div class="contact-icon-frame"><i class="fa-brands fa-linkedin-in"></i></div>
+                        <div>
+                            <p>LinkedIn</p>
+                            <p>Connect Now</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/anasmehmood782" target="_blank" class="contact-method-card glass">
+                        <div class="contact-icon-frame"><i class="fa-brands fa-github"></i></div>
+                        <div>
+                            <p>GitHub</p>
+                            <p>Review Code</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 🔥 FIXED: Added explicit method="POST" attribute below -->
+            <!-- ⚠️ Action step: Replace 'your-email@domain.com' with your actual email address -->
+            <form class="glass" action="https://formsubmit.co/anas03218686333@gmail.com" method="POST">
+                <!-- Form Configuration Hooks -->
+                <input type="hidden" name="_captcha" value="false">
+                <!-- Redirects back to your page cleanly after submission -->
+                <input type="hidden" name="_next" value="about:blank"> 
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="i.e Ahmad" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="name@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="information" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">Transmit Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer Stack -->
+    <footer>
+        <p>&copy; 2026 Anas Mehmood. Curated with code and computational structure.</p>
+    </footer>
+
+    <!-- Logic Layer -->
+    <script>
+        // Smooth Navbar Shrink Tracker
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Responsive Navigation Menu Toggle
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        // Close mobile menu immediately upon anchor selection
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+
+        // Dynamic Filtering Core Logic
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Intersection Observer Scroll Animations Engine
+        const revealElements = document.querySelectorAll('.reveal');
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('section');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+        revealElements.forEach(element => revealObserver.observe(element));
+
+        // Active Navigation Link Synchronizer
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').slice(1) === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
