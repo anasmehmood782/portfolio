@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         :root {
             --bg-dark: #0b0f19;
@@ -41,7 +42,7 @@
             width: 40vw;
             height: 40vw;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
             top: -10vw;
             right: -10vw;
             z-index: -1;
@@ -53,7 +54,7 @@
             width: 50vw;
             height: 50vw;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
             bottom: -15vw;
             left: -15vw;
             z-index: -1;
@@ -115,7 +116,8 @@
             transition: color 0.2s ease;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--accent);
         }
 
@@ -391,7 +393,8 @@
             transition: all 0.2s ease;
         }
 
-        .filter-btn.active, .filter-btn:hover {
+        .filter-btn.active,
+        .filter-btn:hover {
             background: var(--accent-glow);
             color: var(--accent);
             border-color: var(--accent);
@@ -550,7 +553,8 @@
             font-weight: 500;
         }
 
-        .form-group input, .form-group textarea {
+        .form-group input,
+        .form-group textarea {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-color);
             padding: 12px;
@@ -561,7 +565,8 @@
             transition: all 0.2s ease;
         }
 
-        .form-group input:focus, .form-group textarea:focus {
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--accent);
             background: rgba(255, 255, 255, 0.05);
@@ -594,11 +599,26 @@
 
         /* Responsive Breakpoints */
         @media (max-width: 968px) {
-            #hero h1 { font-size: 2.8rem; }
-            .contact-container { grid-template-columns: 1fr; gap: 3rem; }
-            nav { padding: 0 5%; }
-            section { padding: 90px 5% 40px 5%; }
-            footer { padding: 40px 5%; }
+            #hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            nav {
+                padding: 0 5%;
+            }
+
+            section {
+                padding: 90px 5% 40px 5%;
+            }
+
+            footer {
+                padding: 40px 5%;
+            }
         }
 
         @media (max-width: 768px) {
@@ -621,13 +641,26 @@
                 left: 0;
             }
 
-            .menu-btn { display: block; }
-            #hero h1 { font-size: 2.3rem; }
-            .cta-group { flex-direction: column; width: 100%; }
-            .btn { text-align: center; }
+            .menu-btn {
+                display: block;
+            }
+
+            #hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                text-align: center;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Ambient Accents -->
@@ -652,8 +685,9 @@
     <section id="hero">
         <div class="hero-badge">Available for Projects</div>
         <h1>Engineering Scalable Software & Decoding <span>Biological Data</span></h1>
-        <p>Full-Stack Developer and Bioinformatics specialist focused on clean visual architecture, efficient data pipelines, and optimized systems engineering.</p>
-        
+        <p>Full-Stack Developer and Bioinformatics specialist focused on clean visual architecture, efficient data
+            pipelines, and optimized systems engineering.</p>
+
         <div class="cta-group">
             <a href="#projects" class="btn btn-primary">Explore Projects</a>
             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -661,10 +695,14 @@
 
         <!-- Direct Instant Action Hub -->
         <div class="hero-socials-row">
-            <a href="mailto:anas03218686333@gmail.com" class="social-chip"><i class="fa-regular fa-envelope"></i> Email</a>
-            <a href="https://wa.me/923247652566" target="_blank" class="social-chip"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a href="www.linkedin.com/in/anas-mehmood-138080379" target="_blank" class="social-chip"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-            <a href="https://github.com/anasmehmood782" target="_blank" class="social-chip"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="mailto:anas03218686333@gmail.com" class="social-chip"><i class="fa-regular fa-envelope"></i>
+                Email</a>
+            <a href="https://wa.me/923247652566" target="_blank" class="social-chip"><i
+                    class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="www.linkedin.com/in/anas-mehmood-138080379" target="_blank" class="social-chip"><i
+                    class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://github.com/anasmehmood782" target="_blank" class="social-chip"><i
+                    class="fa-brands fa-github"></i> GitHub</a>
             <!-- <a href="https://facebook.com/yourusername" target="_blank" class="social-chip"><i class="fa-brands fa-facebook-f"></i> Facebook</a> -->
         </div>
     </section>
@@ -682,7 +720,8 @@
                     <div class="timeline-date">2024 — Present</div>
                     <h3>BS Bioinformatics</h3>
                     <h4>University of Agriculture, Faisalabad</h4>
-                    <p>Focusing on algorithmic sequence mapping, data architectures, statistical modeling, and transcriptomics registries.</p>
+                    <p>Focusing on algorithmic sequence mapping, data architectures, statistical modeling, and
+                        transcriptomics registries.</p>
                 </div>
             </div>
         </div>
@@ -692,9 +731,10 @@
     <section id="expertise">
         <div class="reveal">
             <h2 class="section-title">Core Expertise</h2>
-            <p class="section-subtitle">A balanced approach to application architecture, mathematical analysis, and data systems.</p>
+            <p class="section-subtitle">A balanced approach to application architecture, mathematical analysis, and data
+                systems.</p>
         </div>
-        
+
         <div class="skills-grid">
             <div class="skill-card glass reveal">
                 <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
@@ -738,7 +778,8 @@
     <section id="projects">
         <div class="reveal">
             <h2 class="section-title">Featured Work</h2>
-            <p class="section-subtitle">Selected applications displaying algorithmic logic, minimalist UI execution, and systems engineering.</p>
+            <p class="section-subtitle">Selected applications displaying algorithmic logic, minimalist UI execution, and
+                systems engineering.</p>
         </div>
 
         <div class="project-filters reveal">
@@ -747,7 +788,61 @@
             <button class="filter-btn" data-filter="mobile-ai">Mobile & AI Ecosystems</button>
         </div>
 
+
         <div class="projects-grid">
+            <!-- Project: Scientific Vision Journal -->
+            <div class="project-card glass reveal" data-category="live-web">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">OJS Platform</span>
+                        <span class="tech-badge">PHP / MySQL</span>
+                        <span class="tech-badge">Academic Publishing</span>
+                    </div>
+                    <h3>Scientific Vision Journal Portal</h3>
+                    <p>A production open-access journal publication portal managing editorial workflows, peer-review
+                        submissions, metadata indexing, and scholarly issue archives.</p>
+                    <div class="project-links">
+                        <a href="https://scientificvisionjournal.com/index.php/svj/index" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i> Live Portal</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: FeatureAir Organization -->
+            <div class="project-card glass reveal" data-category="live-web">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">Web Architecture</span>
+                        <span class="tech-badge">UI/UX</span>
+                        <span class="tech-badge">Live Production</span>
+                    </div>
+                    <h3>FeatureAir Web Platform</h3>
+                    <p>An official online web portal delivering clean organizational branding, responsive layout
+                        structures, and optimized digital presence.</p>
+                    <div class="project-links">
+                        <a href="https://featureair.org" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: UAF OPAC Book Search Engine -->
+            <div class="project-card glass reveal" data-category="live-web">
+                <div class="project-info">
+                    <div class="project-tech">
+                        <span class="tech-badge">PHP Core</span>
+                        <span class="tech-badge">Catalog Database</span>
+                        <span class="tech-badge">Search Queries</span>
+                    </div>
+                    <h3>UAF OPAC Library Search Engine</h3>
+                    <p>An Online Public Access Catalog (OPAC) search portal designed for dynamic library queries, rapid
+                        book inventory indexing, and institutional catalog lookups.</p>
+                    <div class="project-links">
+                        <a href="https://uafopac.freedev.app/book_search.php?i=1" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i> Live Application</a>
+                    </div>
+                </div>
+            </div>
             <!-- Project 1: ClassSync -->
             <div class="project-card glass reveal" data-category="web-apps">
                 <div class="project-info">
@@ -757,10 +852,13 @@
                         <span class="tech-badge">UI/UX Layouts</span>
                     </div>
                     <h3>Library Management</h3>
-                    <p>A classical website to manage Library's book with visual dashborad having Feature of dark/light mode by using HTML CSS JavaScript</p>
+                    <p>A classical website to manage Library's book with visual dashborad having Feature of dark/light
+                        mode by using HTML CSS JavaScript</p>
                     <div class="project-links">
-                        <a href="https://github.com/anasmehmood782/library" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
-                        <a href="https://anasmehmood782.github.io/library/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        <a href="https://github.com/anasmehmood782/library" target="_blank"><i
+                                class="fa-brands fa-github"></i> Source</a>
+                        <a href="https://anasmehmood782.github.io/library/" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
                     </div>
                 </div>
             </div>
@@ -774,13 +872,17 @@
                         <span class="tech-badge">SaaS Minimalist</span>
                     </div>
                     <h3>Attendance Management Suite</h3>
-                    <p>An enterprise-grade personnel validation platform tailored around instant filtering engines and centralized operational dashboards.</p>
+                    <p>An enterprise-grade personnel validation platform tailored around instant filtering engines and
+                        centralized operational dashboards.</p>
                     <div class="project-links">
-                        <a href="https://github.com/anasmehmood782/attandancesystem" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
-                        <a href="https://anasmehmood782.github.io/attandancesystem/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        <a href="https://github.com/anasmehmood782/attandancesystem" target="_blank"><i
+                                class="fa-brands fa-github"></i> Source</a>
+                        <a href="https://anasmehmood782.github.io/attandancesystem/" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
                     </div>
                 </div>
             </div>
+
 
             <!-- Project 3: School Management System -->
             <div class="project-card glass reveal" data-category="web-apps">
@@ -791,30 +893,18 @@
                         <span class="tech-badge">Authentication</span>
                     </div>
                     <h3>School Management System</h3>
-                    <p>A comprehensive academic relational database framework built to coordinate student portfolios, grades, and records queries efficiently.</p>
+                    <p>A comprehensive academic relational database framework built to coordinate student portfolios,
+                        grades, and records queries efficiently.</p>
                     <div class="project-links">
-                        <a href="https://github.com/anasmehmood782/school-system" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+                        <a href="https://github.com/anasmehmood782/school-system" target="_blank"><i
+                                class="fa-brands fa-github"></i> Source</a>
                         <!-- <a href="https://yourdemo.com/school-system" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
                     </div>
                 </div>
             </div>
 
             <!-- Project 4: Airline System -->
-            <div class="project-card glass reveal" data-category="web-apps">
-                <div class="project-info">
-                    <div class="project-tech">
-                        <span class="tech-badge">PHP Core</span>
-                        <span class="tech-badge">Relational SQL</span>
-                        <span class="tech-badge">State Management</span>
-                    </div>
-                    <h3>Airline Booking System</h3>
-                    <p>A high-performance reservation portal organizing flight path routing logic, schedule allocations, and concurrent database operations cleanly.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/anasmehmood782/airline-system" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
-                        <!-- <a href="https://yourdemo.com/airline-system" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Project 5: Online Book Store -->
             <div class="project-card glass reveal" data-category="web-apps">
@@ -825,67 +915,92 @@
                         <span class="tech-badge">E-Commerce</span>
                     </div>
                     <h3>Online Book Store</h3>
-                    <p>An elegant storefront engineered with secure catalog operations, cart state processing, and responsive stock inventory views.</p>
+                    <p>An elegant storefront engineered with secure catalog operations, cart state processing, and
+                        responsive stock inventory views.</p>
                     <div class="project-links">
-                        <a href="https://github.com/anasmehmood782/bookstore" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+                        <a href="https://github.com/anasmehmood782/bookstore" target="_blank"><i
+                                class="fa-brands fa-github"></i> Source</a>
                         <!-- <a href="https://yourdemo.com/bookstore" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
                     </div>
                 </div>
             </div>
-
-            <!-- Project 6: Travel App -->
-            <div class="project-card glass reveal" data-category="mobile-ai">
-                <div class="project-info">
-                    <div class="project-tech">
-                        <span class="tech-badge">React JS</span>
-                        <span class="tech-badge">REST APIs</span>
-                        <span class="tech-badge">Tailwind CSS</span>
-                    </div>
-                    <h3>Smart Travel & Forecast Guide</h3>
-                    <p>A dynamic, modern travel planning hub integrating geographical mapping data pipelines alongside real-time forecast updates.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/anasmehmood782/travel-app" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
-                        <!-- <a href="https://yourdemo.com/travel-app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 7: Sales Inventory -->
-            <div class="project-card glass reveal" data-category="mobile-ai">
-                <div class="project-info">
-                    <div class="project-tech">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Pandas / NumPy</span>
-                        <span class="tech-badge">Data Analysis</span>
-                    </div>
-                    <h3>Sales & Inventory Tracker</h3>
-                    <p>An analytical backend utility engineered to model transaction parameters, audit inventory states, and generate smart metrics reports.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/anasmehmood782/sales-inventory" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
-                        <!-- <a href="https://yourdemo.com/sales-inventory" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
-                    </div>
-                </div>
-            </div>
-
-        
         </div>
     </section>
-    <!-- Certificates & Achievements Section -->
     <!-- Certificates & Achievements Section -->
     <section id="achievements" style="align-items: center;">
         <div class="reveal" style="width: 100%; max-width: 900px;">
             <h2 class="section-title">Achievements</h2>
-            <p class="section-subtitle">Milestones in software engineering and computational analysis.</p>
+            <p class="section-subtitle">Milestones in software engineering, cloud systems, and computational analysis.
+            </p>
         </div>
 
-        
-        <div style="display: flex; flex-direction: column; gap: 3.5rem; width: 100%; max-width: 950px; align-items: center;">
-            
-            <!-- Certificate 1: Python Scrimba -->
-            <div class="glass reveal" style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
-                <div style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
-                    
-                    <img src="learn.png" alt="Python Certificate" style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;" onclick="window.open(this.src)">
+        <div
+            style="display: flex; flex-direction: column; gap: 3.5rem; width: 100%; max-width: 950px; align-items: center;">
+
+            <!-- Certificate 1: AI/ML Engineer Intern -->
+            <div class="glass reveal"
+                style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
+                <div
+                    style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
+                    <img src="AIMLintern.png" alt="AI ML Engineer Intern - Infinity Wave"
+                        style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;"
+                        onclick="window.open(this.src)">
+                </div>
+                <div class="project-info" style="padding: 2rem; border-top: 1px solid var(--border-color);">
+                    <div class="timeline-date" style="margin-bottom: 0.3rem;">Machine Learning & AI</div>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0;">AI / ML Engineer Intern — Infinity Wave</h3>
+                </div>
+            </div>
+
+            <!-- Certificate 2: Web Development Intern (Kaizen Hive) -->
+            <div class="glass reveal"
+                style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
+                <div
+                    style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
+                    <img src="web.png" alt="Web Development Intern - Kaizen Hive"
+                        style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;"
+                        onclick="window.open(this.src)">
+                </div>
+                <div class="project-info" style="padding: 2rem; border-top: 1px solid var(--border-color);">
+                    <div class="timeline-date" style="margin-bottom: 0.3rem;">Full-Stack Web Engineering</div>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Web Development Intern — Kaizen Hive Private
+                        Limited</h3>
+                    <div class="project-links">
+                        <a href="http://program.kaizenhive.com/verify-certificate?id=4cad8d10797166dedee7249f"
+                            target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Online (ID:
+                            4CAD8D1079)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate 3: WordPress Training Certificate -->
+            <div class="glass reveal"
+                style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
+                <div
+                    style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
+                    <img src="wordpress.png" alt="WordPress Training - DigiSkills & Ignite"
+                        style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;"
+                        onclick="window.open(this.src)">
+                </div>
+                <div class="project-info" style="padding: 2rem; border-top: 1px solid var(--border-color);">
+                    <div class="timeline-date" style="margin-bottom: 0.3rem;">CMS & Web Infrastructure</div>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">WordPress Training Certificate — DigiSkills.pk
+                        & Ignite</h3>
+                    <div class="project-links">
+                        <a href="https://digiskills.pk/verify" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i> Verify Online (ID: B4JG47WMK)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate 4: Python Scrimba -->
+            <div class="glass reveal"
+                style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
+                <div
+                    style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
+                    <img src="learn.png" alt="Python Certificate"
+                        style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;"
+                        onclick="window.open(this.src)">
                 </div>
                 <div class="project-info" style="padding: 2rem; border-top: 1px solid var(--border-color);">
                     <div class="timeline-date" style="margin-bottom: 0.3rem;">Programming Ecosystems</div>
@@ -893,63 +1008,56 @@
                 </div>
             </div>
 
-            
-            <div class="glass reveal" style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
-                <div style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
-                    <img src="hackathon.png" alt="Docker Certification" style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;" onclick="window.open(this.src)">
+            <!-- Certificate 5: Hackathon Participant -->
+            <div class="glass reveal"
+                style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
+                <div
+                    style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
+                    <img src="hackathon.png" alt="Hackathon Participant"
+                        style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;"
+                        onclick="window.open(this.src)">
                 </div>
                 <div class="project-info" style="padding: 2rem; border-top: 1px solid var(--border-color);">
-                    <div class="timeline-date" style="margin-bottom: 0.3rem;">UAF </div>
-                    <h3 style="font-size: 1.4rem; margin-bottom: 0;">Hackathon participant</h3>
+                    <div class="timeline-date" style="margin-bottom: 0.3rem;">UAF Competitive Coding</div>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0;">Hackathon Participant</h3>
                 </div>
             </div>
 
-            <!-- Certificate 3: AWS Cloud Practitioner -->
-            <div class="glass reveal" style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
-                <div style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
-                    <img src="data_analytic.png" alt="AWS Certification" style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;" onclick="window.open(this.src)">
+            <!-- Certificate 6: Data Analysis Using Python -->
+            <div class="glass reveal"
+                style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
+                <div
+                    style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
+                    <img src="data_analytic.png" alt="Data Analysis Using Python"
+                        style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;"
+                        onclick="window.open(this.src)">
                 </div>
                 <div class="project-info" style="padding: 2rem; border-top: 1px solid var(--border-color);">
-                    <div class="timeline-date" style="margin-bottom: 0.3rem;">Python (Numpy,Pandas,Matplot)</div>
-                    <h3 style="font-size: 1.4rem; margin-bottom: 0;">Data analysis using python </h3>
+                    <div class="timeline-date" style="margin-bottom: 0.3rem;">Python (NumPy, Pandas, Matplotlib)</div>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0;">Data Analysis Using Python</h3>
                 </div>
             </div>
-            <div class="glass reveal" style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
-                <div style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
-                    <img src="data_science.png" alt="AWS Certification" style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;" onclick="window.open(this.src)">
-                </div>
-                <div class="project-info" style="padding: 2rem; border-top: 1px solid var(--border-color);">
-                    <div class="timeline-date" style="margin-bottom: 0.3rem;">Bioinformatics</div>
-                    <h3 style="font-size: 1.4rem; margin-bottom: 0;">Python for biology data</h3>
-                </div>
-            </div>
-            <div class="glass reveal" style="border-radius: 16px; overflow: hidden; width: 100%; transition: transform 0.3s ease;">
-                <div style="width: 100%; background: rgba(0,0,0,0.15); padding: 10px; display: flex; justify-content: center; align-items: center;">
-                    <img src="stat.png" alt="AWS Certification" style="width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 8px; cursor: zoom-in;" onclick="window.open(this.src)">
-                </div>
-                <div class="project-info" style="padding: 2rem; border-top: 1px solid var(--border-color);">
-                    <div class="timeline-date" style="margin-bottom: 0.3rem;">Statistical analysis</div>
-                    <h3 style="font-size: 1.4rem; margin-bottom: 0;">Coursera</h3>
-                </div>
-            </div>
+
 
         </div>
     </section>
-    
+
     <section id="contact">
         <div class="reveal">
             <h2 class="section-title">Initiate Alignment</h2>
-            <p class="section-subtitle">Let's discuss development opportunities, data platform architectures, or research integrations.</p>
+            <p class="section-subtitle">Let's discuss development opportunities, data platform architectures, or
+                research integrations.</p>
         </div>
 
         <div class="contact-container reveal">
             <div class="contact-details">
                 <h3>Connect via your preferred framework.</h3>
                 <p>Click any link below for direct routing, or deploy the communication array on the right side.</p>
-                
+
                 <div class="contact-grid">
                     <!-- Adjusted for text wrapping to prevent card text clipping -->
-                    <a href="mailto:anas03218686333@gmail.com" class="contact-method-card glass" style="word-break: break-all;">
+                    <a href="mailto:anas03218686333@gmail.com" class="contact-method-card glass"
+                        style="word-break: break-all;">
                         <div class="contact-icon-frame"><i class="fa-regular fa-envelope"></i></div>
                         <div>
                             <p>Email</p>
@@ -964,7 +1072,8 @@
                             <p>Open Chat</p>
                         </div>
                     </a>
-                    <a href="www.linkedin.com/in/anas-mehmood-138080379" target="_blank" class="contact-method-card glass">
+                    <a href="www.linkedin.com/in/anas-mehmood-138080379" target="_blank"
+                        class="contact-method-card glass">
                         <div class="contact-icon-frame"><i class="fa-brands fa-linkedin-in"></i></div>
                         <div>
                             <p>LinkedIn</p>
@@ -987,7 +1096,7 @@
                 <!-- Form Configuration Hooks -->
                 <input type="hidden" name="_captcha" value="false">
                 <!-- Redirects back to your page cleanly after submission -->
-                <input type="hidden" name="_next" value="about:blank"> 
+                <input type="hidden" name="_next" value="about:blank">
 
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -1005,13 +1114,13 @@
             </form>
         </div>
     </section>
-    
+
     <!-- Footer Stack -->
     <footer>
         <p>&copy; 2026 Anas Mehmood. Curated with code and computational structure.</p>
     </footer>
 
-    
+
     <script>
         // Smooth Navbar Shrink Tracker
         window.addEventListener('scroll', () => {
@@ -1026,7 +1135,7 @@
         // Mobile Responsive Navigation Menu Toggle
         const menuBtn = document.querySelector('.menu-btn');
         const navLinks = document.querySelector('.nav-links');
-        
+
         menuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('open');
             const icon = menuBtn.querySelector('i');
@@ -1100,4 +1209,5 @@
         });
     </script>
 </body>
+
 </html>
